@@ -2,6 +2,10 @@
 
 This README provides details about the API endpoints, authentication, and other related information for the project.
 
+## Just run --
+- php artisan migrate
+- for improting datatables 
+
 ## Table of Contents
 
 - [Authentication](#authentication)
