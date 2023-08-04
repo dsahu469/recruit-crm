@@ -4,7 +4,10 @@ This README provides details about the API endpoints, authentication, and other 
 
 ## Just run --
 - php artisan migrate
-- for improting datatables 
+for improting datatables 
+
+## Postman Collection can be found by using -
+https://documenter.getpostman.com/view/28917242/2s9XxwxaHV
 
 ## Table of Contents
 
