@@ -1,0 +1,588 @@
+{
+	"info": {
+		"_postman_id": "b471cee4-0a93-4f3e-903c-b4a001018090",
+		"name": "Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "28917242"
+	},
+	"item": [
+		{
+			"name": "Register",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "dsahu1@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						},
+						{
+							"key": "first_name",
+							"value": "Dinesh",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Sahu",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/register",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"register"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Login",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "email",
+							"value": "dsahu1@mail.com",
+							"type": "text"
+						},
+						{
+							"key": "password",
+							"value": "12345678",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/login",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Refresh Token",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDg1NzAxLCJleHAiOjE2OTEwODkzMDEsIm5iZiI6MTY5MTA4NTcwMSwianRpIjoiRnlod0p6bE9BdEhXRUsyUiIsInN1YiI6IjllYTg4ZjBjLTFmNTgtNDU2ZS1iNWRhLTM4NTA0ZTZiZjRlOSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.I0-geZ9t1_tiOrOPjvkYQx1zTNrb79ujepPuowqLfIY",
+						"type": "text"
+					},
+					{
+						"key": "Accept",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/token/refresh",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"token",
+						"refresh"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Logout",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDkzOTgxLCJleHAiOjE2OTEwOTc1ODEsIm5iZiI6MTY5MTA5Mzk4MSwianRpIjoiZGNFaHdkMlpsTEpiMXpqRCIsInN1YiI6IjllYTg4ZjBjLTFmNTgtNDU2ZS1iNWRhLTM4NTA0ZTZiZjRlOSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.VhvcnejrmU6LEYBDyBxivyi1xc90bjBfpo4MLWFHNUY",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8000/api/v1/logout",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"logout"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Address",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDk2Mzc1LCJleHAiOjE2OTEwOTk5NzUsIm5iZiI6MTY5MTA5NjM3NSwianRpIjoiWXpQaDFOU1U1bzdMdUZJayIsInN1YiI6IjJiNjNhMGI4LTAwYTAtNDQ2Yy1hOWE1LTZjNTRiMDU5ZjJlMSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.qlIIo35Zbv0wWIlRyWci-OlpAYLewpWihJpknSAHLVs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "country",
+							"value": "INDIA",
+							"type": "text"
+						},
+						{
+							"key": "street_address",
+							"value": "SOMETHING ROAD",
+							"type": "text"
+						},
+						{
+							"key": "city",
+							"value": "CONTAI",
+							"type": "text"
+						},
+						{
+							"key": "state",
+							"value": "WEST BENGAL",
+							"type": "text"
+						},
+						{
+							"key": "postal_code",
+							"value": "721401",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/address",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"address"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Address",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDk2Mzc1LCJleHAiOjE2OTEwOTk5NzUsIm5iZiI6MTY5MTA5NjM3NSwianRpIjoiWXpQaDFOU1U1bzdMdUZJayIsInN1YiI6IjJiNjNhMGI4LTAwYTAtNDQ2Yy1hOWE1LTZjNTRiMDU5ZjJlMSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.qlIIo35Zbv0wWIlRyWci-OlpAYLewpWihJpknSAHLVs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/address/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"address",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Currency",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDk2Mzc1LCJleHAiOjE2OTEwOTk5NzUsIm5iZiI6MTY5MTA5NjM3NSwianRpIjoiWXpQaDFOU1U1bzdMdUZJayIsInN1YiI6IjJiNjNhMGI4LTAwYTAtNDQ2Yy1hOWE1LTZjNTRiMDU5ZjJlMSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.qlIIo35Zbv0wWIlRyWci-OlpAYLewpWihJpknSAHLVs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "code",
+							"value": "INR",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/currency",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"currency"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Currency",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDk2Mzc1LCJleHAiOjE2OTEwOTk5NzUsIm5iZiI6MTY5MTA5NjM3NSwianRpIjoiWXpQaDFOU1U1bzdMdUZJayIsInN1YiI6IjJiNjNhMGI4LTAwYTAtNDQ2Yy1hOWE1LTZjNTRiMDU5ZjJlMSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.qlIIo35Zbv0wWIlRyWci-OlpAYLewpWihJpknSAHLVs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/currency/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"currency",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Save Candidates",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDkwMjE2LCJleHAiOjE2OTEwOTM4MTYsIm5iZiI6MTY5MTA5MDIxNiwianRpIjoiN0pPemk2NzVvNmh3YVdWbyIsInN1YiI6IjllYTg4ZjBjLTFmNTgtNDU2ZS1iNWRhLTM4NTA0ZTZiZjRlOSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.Q4wQOrnJ5XG5O3vdLfNVss0T-vlobzXIRzzTJQIICbY",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "John",
+							"type": "text"
+						},
+						{
+							"key": "last_name",
+							"value": "Doe",
+							"type": "text"
+						},
+						{
+							"key": "age",
+							"value": "28",
+							"type": "text"
+						},
+						{
+							"key": "department",
+							"value": "BCA",
+							"type": "text"
+						},
+						{
+							"key": "min_salary_expectation",
+							"value": "10000",
+							"type": "text"
+						},
+						{
+							"key": "max_salary_expectation",
+							"value": "20000",
+							"type": "text"
+						},
+						{
+							"key": "currency_id",
+							"value": "de040155-2eb2-4e42-9801-c1c5baa7ac6c",
+							"type": "text"
+						},
+						{
+							"key": "address_id",
+							"value": "da99fb97-22e6-45eb-9ebc-f5cfe965987c",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/candidates",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"candidates"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Get Candidate",
+			"protocolProfileBehavior": {
+				"disableBodyPruning": true
+			},
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDk2Mzc1LCJleHAiOjE2OTEwOTk5NzUsIm5iZiI6MTY5MTA5NjM3NSwianRpIjoiWXpQaDFOU1U1bzdMdUZJayIsInN1YiI6IjJiNjNhMGI4LTAwYTAtNDQ2Yy1hOWE1LTZjNTRiMDU5ZjJlMSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.qlIIo35Zbv0wWIlRyWci-OlpAYLewpWihJpknSAHLVs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/candidates/",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"candidates",
+						""
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Candidate Page - 2",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDk2Mzc1LCJleHAiOjE2OTEwOTk5NzUsIm5iZiI6MTY5MTA5NjM3NSwianRpIjoiWXpQaDFOU1U1bzdMdUZJayIsInN1YiI6IjJiNjNhMGI4LTAwYTAtNDQ2Yy1hOWE1LTZjNTRiMDU5ZjJlMSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.qlIIo35Zbv0wWIlRyWci-OlpAYLewpWihJpknSAHLVs",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "http://localhost:8000/api/v1/candidates?page=2",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"candidates"
+					],
+					"query": [
+						{
+							"key": "page",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Delete Candidate",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDk2Mzc1LCJleHAiOjE2OTEwOTk5NzUsIm5iZiI6MTY5MTA5NjM3NSwianRpIjoiWXpQaDFOU1U1bzdMdUZJayIsInN1YiI6IjJiNjNhMGI4LTAwYTAtNDQ2Yy1hOWE1LTZjNTRiMDU5ZjJlMSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.qlIIo35Zbv0wWIlRyWci-OlpAYLewpWihJpknSAHLVs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": []
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/candidates/d540ed44-3159-427d-94c0-dce1dc3d159a",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"candidates",
+						"d540ed44-3159-427d-94c0-dce1dc3d159a"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search Candidate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMDk2Mzc1LCJleHAiOjE2OTEwOTk5NzUsIm5iZiI6MTY5MTA5NjM3NSwianRpIjoiWXpQaDFOU1U1bzdMdUZJayIsInN1YiI6IjJiNjNhMGI4LTAwYTAtNDQ2Yy1hOWE1LTZjNTRiMDU5ZjJlMSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.qlIIo35Zbv0wWIlRyWci-OlpAYLewpWihJpknSAHLVs",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "keyword",
+							"value": "Ma",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/candidates/search",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"candidates",
+						"search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Update Candidate",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Authorization",
+						"value": "Bearer eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJodHRwOi8vbG9jYWxob3N0OjgwMDAvYXBpL3YxL2xvZ2luIiwiaWF0IjoxNjkxMTAwODc3LCJleHAiOjE2OTExMDQ0NzcsIm5iZiI6MTY5MTEwMDg3NywianRpIjoiVE1UN2hHY0psVHBQOEJvOSIsInN1YiI6IjJiNjNhMGI4LTAwYTAtNDQ2Yy1hOWE1LTZjNTRiMDU5ZjJlMSIsInBydiI6IjM1MTc1NTcxNjRkNzcwNzQ5YzcwYjYwNTlhNzE3NjAxNjdiZTJkMmMifQ.Bhxfn5k9vnRUg0ULcHT3Izuph51nbV5gKhrfZXwPGfM",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "formdata",
+					"formdata": [
+						{
+							"key": "first_name",
+							"value": "Jacob",
+							"type": "text"
+						},
+						{
+							"key": "skills[]",
+							"value": "{\"skill\":  \"Coding\", \"level\" : \"5\"}",
+							"type": "text"
+						},
+						{
+							"key": "phone_numbers[]",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "education[]",
+							"value": "",
+							"type": "text"
+						},
+						{
+							"key": "experiences[]",
+							"value": "",
+							"type": "text"
+						}
+					]
+				},
+				"url": {
+					"raw": "localhost:8000/api/v1/candidates/update/0652c2b5-4445-4eed-b429-84f2b1f58d8d",
+					"host": [
+						"localhost"
+					],
+					"port": "8000",
+					"path": [
+						"api",
+						"v1",
+						"candidates",
+						"update",
+						"0652c2b5-4445-4eed-b429-84f2b1f58d8d"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
