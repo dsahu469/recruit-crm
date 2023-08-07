@@ -70,6 +70,6 @@ https://documenter.getpostman.com/view/28917242/2s9XxwxaHV
 
 ---
 
-For more details, please refer to the detailed API documentation available at http://localhost:8080/docs.
+For more details, please refer to the detailed API documentation available at http://localhost:8080/doc.
 
 For additional questions or support, contact [Your Contact Information].
