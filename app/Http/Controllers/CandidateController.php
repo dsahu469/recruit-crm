@@ -20,6 +20,38 @@ use App\Models\Education;
 
 class CandidateController extends Controller
 {
+
+    /**
+ * @OA\Post(
+ *     path="/v1/candidates",
+ *     summary="Save a candidate",
+ *     operationId="saveCandidate",
+ *     @OA\RequestBody(
+ *         required=true,
+ *         @OA\JsonContent(
+ *             @OA\Property(property="first_name", type="string"),
+ *             @OA\Property(property="last_name", type="string"),
+ *             @OA\Property(property="age", type="integer"),
+ *             @OA\Property(property="department", type="string"),
+ *             @OA\Property(property="min_salary_expectation", type="number"),
+ *             @OA\Property(property="max_salary_expectation", type="number"),
+ *             @OA\Property(property="currency_id", type="string"),
+ *             @OA\Property(property="address_id", type="string"),
+ *         ),
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful response"
+ *     ),
+ *     @OA\Header(
+ *         header="Authorization",
+ *         description="Bearer {access_token}",
+ *         @OA\Schema(
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
     function store(Request $request){
         $validator = Validator::make($request->all(), [
             'first_name'             => 'required|string',
@@ -63,6 +95,66 @@ class CandidateController extends Controller
         }
     }
 
+    /**
+ * @OA\Get(
+ *     path="/v1/candidates/{id}",
+ *     summary="Get a specific candidate",
+ *     operationId="getCandidate",
+ *     @OA\Parameter(
+ *         name="id",
+ *         in="path",
+ *         required=true,
+ *         description="ID of the candidate",
+ *         @OA\Schema(type="string")
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful response"
+ *     ),
+ *     @OA\Header(
+ *         header="Authorization",
+ *         description="Bearer {access_token}",
+ *         @OA\Schema(
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
+
+
+     /**
+ * @OA\Get(
+ *     path="/v1/candidates",
+ *     summary="Get all candidates with pagination",
+ *     operationId="getAllCandidates",
+ *     @OA\Parameter(
+ *         name="page",
+ *         in="query",
+ *         required=false,
+ *         description="Page number",
+ *         @OA\Schema(type="integer")
+ *     ),
+ *     @OA\Parameter(
+ *         name="per_page",
+ *         in="query",
+ *         required=false,
+ *         description="Number of items per page",
+ *         @OA\Schema(type="integer")
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful response"
+ *     ),
+ *     @OA\Header(
+ *         header="Authorization",
+ *         description="Bearer {access_token}",
+ *         @OA\Schema(
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
+
     function show($id = null){
         $user = auth()->user();
 
@@ -85,6 +177,49 @@ class CandidateController extends Controller
 
         return response()->json(['candidates' => $candidates]);
     }
+
+    
+    /**
+ * @OA\Post(
+ *     path="/v1/candidates/search",
+ *     summary="Search for candidates with pagination",
+ *     operationId="searchCandidates",
+ *     @OA\RequestBody(
+ *         required=true,
+ *         @OA\JsonContent(
+ *             @OA\Property(property="keyword", type="string"),
+ *             @OA\Property(property="department", type="string"),
+ *             @OA\Property(property="min_salary", type="number"),
+ *             @OA\Property(property="max_salary", type="number"),
+ *         ),
+ *     ),
+ *     @OA\Parameter(
+ *         name="page",
+ *         in="query",
+ *         required=false,
+ *         description="Page number",
+ *         @OA\Schema(type="integer")
+ *     ),
+ *     @OA\Parameter(
+ *         name="per_page",
+ *         in="query",
+ *         required=false,
+ *         description="Number of items per page",
+ *         @OA\Schema(type="integer")
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful response"
+ *     ),
+ *     @OA\Header(
+ *         header="Authorization",
+ *         description="Bearer {access_token}",
+ *         @OA\Schema(
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
 
     public function search(Request $request){
         $query = Candidate::query();
@@ -114,6 +249,33 @@ class CandidateController extends Controller
         return response()->json($candidates);
     }
 
+    
+    /**
+ * @OA\Delete(
+ *     path="/v1/candidates/{id}",
+ *     summary="Delete a specific candidate",
+ *     operationId="deleteCandidate",
+ *     @OA\Parameter(
+ *         name="id",
+ *         in="path",
+ *         required=true,
+ *         description="ID of the candidate to delete",
+ *         @OA\Schema(type="string")
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful response"
+ *     ),
+ *     @OA\Header(
+ *         header="Authorization",
+ *         description="Bearer {access_token}",
+ *         @OA\Schema(
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
+
     public function delete($id)
     {
         $candidate = Candidate::find($id);
@@ -126,6 +288,48 @@ class CandidateController extends Controller
 
         return response()->json(['message' => 'Candidate deleted']);
     }
+
+    /**
+ * @OA\Post(
+ *     path="/v1/candidates/{id}",
+ *     summary="Update a candidate",
+ *     operationId="updateCandidate",
+ *     @OA\Parameter(
+ *         name="id",
+ *         in="path",
+ *         required=true,
+ *         description="ID of the candidate to update",
+ *         @OA\Schema(type="string")
+ *     ),
+ *     @OA\RequestBody(
+ *         required=true,
+ *         @OA\JsonContent(
+ *             @OA\Property(property="first_name", type="string"),
+ *             @OA\Property(property="last_name", type="string"),
+ *             @OA\Property(property="age", type="integer"),
+ *             @OA\Property(property="department", type="string"),
+ *             @OA\Property(property="min_salary_expectation", type="number"),
+ *             @OA\Property(property="max_salary_expectation", type="number"),
+ *             @OA\Property(property="currency_id", type="string"),
+ *             @OA\Property(property="address_id", type="string"),
+ *             @OA\Property(property="phone_numbers", type="array", @OA\Items(type="object")),
+ *             @OA\Property(property="educations", type="array", @OA\Items(type="object")),
+ *             @OA\Property(property="skills", type="array", @OA\Items(type="object")),
+ *         ),
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful response"
+ *     ),
+ *     @OA\Header(
+ *         header="Authorization",
+ *         description="Bearer {access_token}",
+ *         @OA\Schema(
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
 
     public function update(Request $request, $id)
     {

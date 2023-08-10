@@ -23,6 +23,35 @@ class AuthController extends Controller
         $this->auth = $auth;
     }
 
+
+    /**
+ * @OA\Post(
+ *     path="/v1/register",
+ *     summary="Sign up a user",
+ *     operationId="registerUser",
+ *     @OA\RequestBody(
+ *         required=true,
+ *         @OA\JsonContent(
+ *             @OA\Property(property="email", type="string", format="email"),
+ *             @OA\Property(property="password", type="string"),
+ *             @OA\Property(property="first_name", type="string"),
+ *             @OA\Property(property="last_name", type="string"),
+ *         ),
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful response"
+ *     ),
+ *     @OA\Header(
+ *         header="Authorization",
+ *         description="Bearer {access_token}",
+ *         @OA\Schema(
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
+
     public function register(Request $request){
         $validator = Validator::make($request->all(), [
             'email' => 'required|email|unique:user_t,email',
@@ -61,6 +90,32 @@ class AuthController extends Controller
         ]);
     }
 
+    /**
+ * @OA\Post(
+ *     path="/v1/login",
+ *     summary="Get access & refresh token",
+ *     operationId="loginUser",
+ *     @OA\RequestBody(
+ *         required=true,
+ *         @OA\JsonContent(
+ *             @OA\Property(property="email", type="string", format="email"),
+ *             @OA\Property(property="password", type="string"),
+ *         ),
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful response"
+ *     ),
+ *     @OA\Header(
+ *         header="Authorization",
+ *         description="Bearer {access_token}",
+ *         @OA\Schema(
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
+
     public function login(Request $request){
         $credentials = $request->only('email', 'password');
 
@@ -80,9 +135,65 @@ class AuthController extends Controller
         // ], 200);
     }
 
+    /**
+ * @OA\Post(
+ *     path="/v1/token/refresh",
+ *     summary="Get new access token",
+ *     operationId="refreshToken",
+ *     @OA\RequestBody(
+ *         required=true,
+ *         @OA\JsonContent(
+ *             @OA\Property(property="refresh_token", type="string"),
+ *         ),
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful response"
+ *     ),
+ *     @OA\Response(
+ *         response=401,
+ *         description="Unauthorized"
+ *     ),
+ *     @OA\Header(
+ *         header="Authorization",
+ *         description="Bearer {access_token}",
+ *         @OA\Schema(
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
+
+
     public function refresh(){
         return $this->respondWithToken(auth()->refresh());
     }
+
+    /**
+ * @OA\Post(
+ *     path="/v1/logout",
+ *     summary="Invalidate refresh token",
+ *     operationId="logoutUser",
+ *     @OA\RequestBody(
+ *         required=true,
+ *         @OA\JsonContent(
+ *             @OA\Property(property="refresh_token", type="string"),
+ *         ),
+ *     ),
+ *     @OA\Response(
+ *         response=200,
+ *         description="Successful response"
+ *     ),
+ *     @OA\Header(
+ *         header="Authorization",
+ *         description="Bearer {access_token}",
+ *         @OA\Schema(
+ *             type="string"
+ *         )
+ *     )
+ * )
+ */
+
 
     public function logout(){
         auth()->logout();

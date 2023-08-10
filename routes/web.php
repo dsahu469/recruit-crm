@@ -2,8 +2,6 @@
 
 use Illuminate\Support\Facades\Route;
 
-use App\Http\Controllers\DocController;
-
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,5 +16,3 @@ use App\Http\Controllers\DocController;
 Route::get('/', function () {
     return view('welcome');
 });
-
-Route::get('/doc', [DocController::class, 'api_doc'])->name('api.doc');
