@@ -4,8 +4,6 @@ Welcome to Project Name! This is a [Laravel](https://laravel.com/) project that 
 
 ## Installation
 
-## Clone the repository:
-
 ```bash
 git clone https://github.com/yourusername/project-name.git
 
