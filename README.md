@@ -1,6 +1,6 @@
 # RECRUIT-CRM Assignment
 
-Welcome to Project Name! This is a [Laravel](https://laravel.com/) project that provides a comprehensive API for managing candidates.
+Welcome to Recruit-CRM Assignment! This is a [Laravel](https://laravel.com/) project that provides a comprehensive API for managing candidates.
 
 ## Installation
 
