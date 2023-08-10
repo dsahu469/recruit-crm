@@ -37,6 +37,3 @@ OpenAPI Documentation
 License
 
 This project is open-source and available under the MIT License.
-
-
-Replace `Project Name`, `https://github.com/dsahu469/recruit-crm.git`, and other placeholders with the actual project details. This `README.md` provides installation instructions, a link to the OpenAPI documentation, and information about the project's license.
