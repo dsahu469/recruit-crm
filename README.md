@@ -1,4 +1,4 @@
-# Project Name
+# RECRUIT-CRM Assignment
 
 Welcome to Project Name! This is a [Laravel](https://laravel.com/) project that provides a comprehensive API for managing candidates.
 
