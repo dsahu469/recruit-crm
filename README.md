@@ -5,7 +5,7 @@ Welcome to Project Name! This is a [Laravel](https://laravel.com/) project that 
 ## Installation
 
 ```bash
-git clone https://github.com/yourusername/project-name.git
+git clone https://github.com/dsahu469/recruit-crm.git
 
 ## Navigate to the project directory:
 
